@@ -8,7 +8,7 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 ## Guide to code files
 
 
-## Data used
+## Guide to data files
 
 * Case data for invasive bacterial infections supplied by members of the IRIS Initiative. _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
 * [Oxford COVID-19 Government Response Tracker](https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker)
