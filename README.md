@@ -2,20 +2,17 @@
 
 Analysis of changes in rates of invasive bacterial disease during the early phase of the COVID-19 pandemic.
 
+[Brueggemann AB, Jansen van Rensburg MJ, Shaw D, McCarthy N, Jolley KA, Maiden MCJ et al. The Invasive Respiratory Infection Surveillance (IRIS) Initiative reveals significant reductions in invasive bacterial infections during the COVID-19 pandemic. medRxiv 2020.11.18.20225029](https://www.medrxiv.org/content/10.1101/2020.11.18.20225029v1)
+
 
 ## Guide to code files
 
 
 ## Data used
 
-* Case data for invasive bacterial infections supplied by members of the IRIS Initiative. _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease in some countries._ 
+* Case data for invasive bacterial infections supplied by members of the IRIS Initiative. _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
 * [Oxford COVID-19 Government Response Tracker](https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker)
 * [Google COVID-19 Community Mobility Reports](https://www.google.com/covid19/mobility/)
-
-
-## Citation
-
-[Brueggemann AB, Jansen van Rensburg MJ, Shaw D, McCarthy N, Jolley KA, Maiden MCJ et al. The Invasive Respiratory Infection Surveillance (IRIS) Initiative reveals significant reductions in invasive bacterial infections during the COVID-19 pandemic. medRxiv 2020.11.18.20225029](https://www.medrxiv.org/content/10.1101/2020.11.18.20225029v1)
 
 
 ## License
