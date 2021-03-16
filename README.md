@@ -23,17 +23,25 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 Code files are organised in sub-directories corresponding to indvidual analyses/figures as follows:
 
 #### ./code/data_processing_and_visualisation
-Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data / Figures 1-3 and S2-S4
+Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data (Figures 1-3 and S2-S4).
 
 > `data_processing_and_visualisation.py` - Python file, input files available in ./data
 
 > `data_processing_and_visualisation.html` - HTML of Jupyter Notebook
 
 #### ./code/interrupted_time_series
-Interrupted time series / Figure S1
+Interrupted time series analyses (Figure S1)
+
+> `interrupted_time_series_all_pathogens.do` - STATA file, using combined data across countries for each pathogen
+
+> `mixed_effects_interrupted_time_series.do` - STATA file, using per country data for _S. pneumoniae_
 
 #### ./code/meta-analysis
-Interrupted time series with meta-analysis of per country estimates / Figure 4
+Interrupted time series with meta-analysis of per country estimates (Figure 4)
+
+> `meta-analysis.do` - STATA file, using per country data for _S. pneumoniae_
+
+> `meta-analysis_forest_plot.R` - R code to generate forest plots for _S. pneumoniae_ meta-analysis
 
 ## License
 
