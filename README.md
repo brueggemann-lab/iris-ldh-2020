@@ -27,9 +27,9 @@ Code files are organised in sub-directories corresponding to indvidual analyses/
 ### ./code/data_processing_and_visualisation
 Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data (Figures 1-3 and S2-S4).
 
-> `data_processing_and_visualisation.py` - Python file, input files available in ./data
+> `data_processing_and_visualisation.py` - Python export of Jupyter Notebook, input files in ./data
 
-> `data_processing_and_visualisation.html` - HTML of Jupyter Notebook
+> `data_processing_and_visualisation.html` - HTML export of Jupyter Notebook (to be viewed in web browser)
 
 ### ./code/interrupted_time_series
 Interrupted time series analyses (Figure S1)
