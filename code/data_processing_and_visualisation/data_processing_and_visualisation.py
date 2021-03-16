@@ -826,10 +826,3 @@ plt.savefig(figurethree/"figure_3.png", bbox_inches="tight")
 plt.savefig(figurethree/"figure_3.svg", bbox_inches="tight")
 
 plt.show()
-
-
-# In[28]:
-
-
-get_ipython().system('pwd')
-
