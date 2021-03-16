@@ -7,13 +7,15 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 
 ## Guide to raw data files
 
-#### Case data for invasive bacterial infections provided by members of the IRIS Initiative
+### Case data for invasive bacterial infections provided by members of the IRIS Initiative
 * dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ data file provided to show data format (as downloaded from PubMLST)
 * _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
-#### Oxford COVID-19 Government Response Tracker (OxCGRT)
+
+### Oxford COVID-19 Government Response Tracker (OxCGRT)
 * oxcgrt_13102020.csv - analysed dataset (downloaded 13/10/2020)
 * [Most recent dataset available here](https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker)
-#### Google COVID-19 Community Mobility Reports (Google CCMR)
+
+### Google COVID-19 Community Mobility Reports (Google CCMR)
 * global_mobility_report_13102020.csv.zip - analysed dataset (downloaded 13/10/2020)
 * [Most recent dataset available here](https://www.google.com/covid19/mobility/)
 
@@ -22,21 +24,21 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 
 Code files are organised in sub-directories corresponding to indvidual analyses/figures as follows:
 
-#### ./code/data_processing_and_visualisation
+### ./code/data_processing_and_visualisation
 Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data (Figures 1-3 and S2-S4).
 
 > `data_processing_and_visualisation.py` - Python file, input files available in ./data
 
 > `data_processing_and_visualisation.html` - HTML of Jupyter Notebook
 
-#### ./code/interrupted_time_series
+### ./code/interrupted_time_series
 Interrupted time series analyses (Figure S1)
 
 > `interrupted_time_series_all_pathogens.do` - STATA file, using combined data across countries for each pathogen
 
 > `mixed_effects_interrupted_time_series.do` - STATA file, using per country data for _S. pneumoniae_
 
-#### ./code/meta-analysis
+### ./code/meta-analysis
 Interrupted time series with meta-analysis of per country estimates (Figure 4)
 
 > `meta-analysis.do` - STATA file, using per country data for _S. pneumoniae_
