@@ -53,4 +53,4 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 * Melissa Jansen van Rensburg - melissa.jansenvanrensburg@ndph.ox.ac.uk / @theflyingturtle
 * Noel McCarthy - noel.mccarthy@tcd.ie
 * David Shaw - david.shaw2@dph.ox.ac.uk
-* Angela Brueggemann - angela.brueggemann@ndph.ox.ac.uk
+* Angela Brueggemann - angela.brueggemann@ndph.ox.ac.uk / @angelabrueggemann
