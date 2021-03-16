@@ -1,6 +1,6 @@
 # iris-ldh-2020
 
-Analysis of changes in rates of invasive bacterial disease during the early phase of the COVID-19 pandemic.
+Investigation of changes in rates of invasive bacterial disease during the early phase of the COVID-19 pandemic.
 
 [Brueggemann AB, Jansen van Rensburg MJ, Shaw D, McCarthy N, Jolley KA, Maiden MCJ et al. The Invasive Respiratory Infection Surveillance (IRIS) Initiative reveals significant reductions in invasive bacterial infections during the COVID-19 pandemic. medRxiv 2020.11.18.20225029](https://www.medrxiv.org/content/10.1101/2020.11.18.20225029v1)
 
@@ -8,7 +8,7 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 ## Guide to raw data files
 
 ### Case data for invasive bacterial infections provided by members of the IRIS Initiative
-* dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ data file provided to show data format (as downloaded from PubMLST)
+* dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ dataset provided to show data format (one per organsim, downloaded from PubMLST)
 * _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
 
 ### Oxford COVID-19 Government Response Tracker (OxCGRT)
@@ -34,16 +34,16 @@ Processing and visualisation of invasive disease data, OxCGRT data, and Google C
 ### ./code/interrupted_time_series
 Interrupted time series analyses (Figure S1)
 
-> `interrupted_time_series_all_pathogens.do` - STATA file, using combined data across countries for each pathogen
+> `interrupted_time_series_all_pathogens.do` - STATA file, analysis of combined data across countries for each pathogen
 
-> `mixed_effects_interrupted_time_series.do` - STATA file, using per country data for _S. pneumoniae_
+> `mixed_effects_interrupted_time_series.do` - STATA file, analysis of per country data for _S. pneumoniae_
 
 ### ./code/meta-analysis
-Interrupted time series with meta-analysis of per country estimates (Figure 4)
+Interrupted time series with meta-analysis of per country estimates for _S. pneumoniae_ (Figure 4)
 
-> `meta-analysis.do` - STATA file, using per country data for _S. pneumoniae_
+> `meta-analysis.do` - STATA file 
 
-> `meta-analysis_forest_plot.R` - R code to generate forest plots for _S. pneumoniae_ meta-analysis
+> `meta-analysis_forest_plot.R` - R code to generate forest plots for meta-analysis
 
 ## License
 
