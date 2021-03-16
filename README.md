@@ -22,16 +22,17 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 
 Code files are organised in sub-directories corresponding to indvidual analyses/figures as follows:
 
-#### ./data_processing_and_visualisation
+#### ./code/data_processing_and_visualisation
 Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data / Figures 1-3 and S2-S4
 
 > `data_processing_and_visualisation.py` - Python file, input files available in ./data
+
 > `data_processing_and_visualisation.html` - HTML of Jupyter Notebook
 
-#### ./interrupted_time_series
+#### ./code/interrupted_time_series
 Interrupted time series / Figure S1
 
-#### ./meta-analysis
+#### ./code/meta-analysis
 Interrupted time series with meta-analysis of per country estimates / Figure 4
 
 ## License
