@@ -8,8 +8,8 @@ Investigation of changes in rates of invasive bacterial disease during the early
 ## Guide to raw data files
 
 ### Case data for invasive bacterial infections provided by members of the IRIS Initiative
-* dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ dataset provided to show data format (one per organsim, downloaded from PubMLST)
 * _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
+* dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ dataset provided to show data format (one per organsim, downloaded from PubMLST)
 
 ### Oxford COVID-19 Government Response Tracker (OxCGRT)
 * oxcgrt_13102020.csv - analysed dataset (downloaded 13/10/2020)
