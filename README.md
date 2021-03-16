@@ -7,18 +7,32 @@ Analysis of changes in rates of invasive bacterial disease during the early phas
 
 ## Guide to raw data files
 
-* Case data for invasive bacterial infections provided by members of the IRIS Initiative. _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
-  * dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ data file provided to show data format (as downloaded from PubMLST)
-* Oxford COVID-19 Government Response Tracker (OxCGRT)
-  * oxcgrt_13102020.csv - analysed dataset (downloaded 13/10/2020)
-  * [Most recent dataset available here](https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker)
-* Google COVID-19 Community Mobility Reports
-  * global_mobility_report_13102020.csv.zip - analysed dataset (downloaded 13/10/2020)
-  * [Most recent dataset available here](https://www.google.com/covid19/mobility/)
+#### Case data for invasive bacterial infections provided by members of the IRIS Initiative
+* _Note: It is not possible to share these data because doing so would risk identifying individual cases of invasive disease._ 
+* dummy_iris_sp_13102020.xlsx - dummy _S. pneumoniae_ data file provided to show data format (as downloaded from PubMLST)
+#### Oxford COVID-19 Government Response Tracker (OxCGRT)
+* oxcgrt_13102020.csv - analysed dataset (downloaded 13/10/2020)
+* [Most recent dataset available here](https://www.bsg.ox.ac.uk/research/research-projects/covid-19-government-response-tracker)
+#### Google COVID-19 Community Mobility Reports (Google CCMR)
+* global_mobility_report_13102020.csv.zip - analysed dataset (downloaded 13/10/2020)
+* [Most recent dataset available here](https://www.google.com/covid19/mobility/)
 
 
 ## Guide to code files
 
+Code files are organised in sub-directories corresponding to indvidual analyses/figures as follows:
+
+#### data_processing_and_visualisation
+Processing and visualisation of invasive disease data, OxCGRT data, and Google CCMR data / Figures 1-3 and S2-S4
+
+> `code/data_processing_and_visualisation/data_processing_and_visualisation.py` - Python file, input files available in ./data
+> `code/data_processing_and_visualisation/data_processing_and_visualisation.html` - HTML of Jupyter Notebook
+
+#### interrupted_time_series
+Interrupted time series / Figure S1
+
+#### meta-analysis
+Interrupted time series with meta-analysis of per country estimates / Figure 4
 
 ## License
 
