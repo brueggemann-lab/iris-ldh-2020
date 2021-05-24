@@ -1,9 +1,9 @@
 
 # coding: utf-8
 
-# # Supplementary file: The Invasive Respiratory Infection Surveillance (IRIS) Initiative reveals significant reductions in invasive bacterial infections during the COVID-19 pandemic
+# ## Supplementary file: Changes in the incidence of invasive disease due to *Streptococcus pneumoniae*, *Haemophilus influenzae*, and *Neisseria meningitidis* during the COVID-19 pandemic in 26 countries and territories in the Invasive Respiratory Infection Surveillance Initiative: a prospective analysis of surveillance data
 # 
-# ## Code required to reproduce data summaries, Figures 1-3, Supplementary Figures 2-4, and input files used in statistical analyses.
+# ## Code required to reproduce data summaries, Figures 1-2, Supplementary Figures 2-5, and input files used in statistical analyses.
 
 # In[1]:
 
@@ -46,9 +46,10 @@ IRIS_COUNTRIES = ['Belgium', 'Brazil', 'Canada', 'China', 'Czech Republic', 'Den
 # 
 # We analysed the following datasets:
 # 
-#  - PubMLST IRIS bacterial isolate data for *S. pneumoniae*, *H. influenzae*, *N. meningitidis*, and *S. agalactiae* (downloaded 13/10/2020)
-#  - Oxford COVID-19 Government Response Tracker (OxCGRT) dataset (downloaded 13/10/2020)
-#  - Google COVID-19 Community Mobility Reports dataset (downloaded 13/10/2020)
+# - PubMLST IRIS bacterial isolate data for *S. pneumoniae*, *H. influenzae*, *N. meningitidis*, and *S. agalactiae* (downloaded 13/10/2020)
+#     - We made a correction to the Danish *S. pneumoniae* dataset and re-ran our analyses on 20/05/2021
+# - Oxford COVID-19 Government Response Tracker (OxCGRT) dataset (downloaded 13/10/2020)
+# - Google COVID-19 Community Mobility Reports dataset (downloaded 13/10/2020)
 #  
 # Note that 'year' and 'week' in downstream analyses are based on ISO 8601 year- and week-numbering. For IRIS bacterial isolate data,  ISO year ('isoyear_sampled') and ISO week ('week_sampled') fields were populated in PubMLST by BIGSdb software based on sampling date ('date_sampled').  For the other datasets, dates were assigned to ISO year and ISO week using the strftime method (see below).
 
@@ -58,7 +59,7 @@ IRIS_COUNTRIES = ['Belgium', 'Brazil', 'Canada', 'China', 'Czech Republic', 'Den
 ### Read data files ###
 
 # Load IRIS bacterial isolate datasets exported from PubMLST, specifying the organism for each
-iris_sp = pd.read_excel('IRIS_Sp_13102020.xlsx', parse_dates=['date_sampled', 'date_received'])
+iris_sp = pd.read_excel('IRIS_Sp_corrected_20052021.xlsx', parse_dates=['date_sampled', 'date_received'])
 iris_sp['species'] = 'S. pneumoniae'
 
 iris_hi = pd.read_excel('IRIS_Hi_13102020.xlsx', parse_dates=['date_sampled', 'date_received'])
@@ -72,14 +73,14 @@ iris_sa['species'] = 'S. agalactiae'
 
 # Load OxCGRT dataset
 grt = pd.read_csv(
-    "oxcgrt_13102020.csv",
+    "OxCGRT_latest13102020.csv",
     parse_dates=['Date'],
     low_memory=False,
 )
 
 # Load Google COVID-19 Community Mobility Reports dataset
 google_data = pd.read_csv(
-    "global_mobility_report_13102020.csv",
+    "Global_Mobility_Report_13102020.csv",
     parse_dates=["date"],
     low_memory=False,
 )
@@ -103,7 +104,7 @@ figureone.mkdir()
 figuretwo = path/"figure_2"
 figuretwo.mkdir()
 
-figurethree = path/"figure_3"
+figurethree = path/"figure_S5"
 figurethree.mkdir()
 
 datasummaries = path/"data_and_summaries"
@@ -184,8 +185,11 @@ lab_continent_breakdown = pd.pivot_table(iris_orgs,
                                margins=True,
 )
 
-# Add 1 to Europe N. meningitidis total to account for Iceland
+# Add 1 to Europe and overall N. meningitidis totals to account for Iceland
 lab_continent_breakdown.loc[pd.IndexSlice['Europe'], ['N. meningitidis']] = lab_continent_breakdown.loc[pd.IndexSlice['Europe'], ['N. meningitidis']] + 1
+lab_continent_breakdown.loc[pd.IndexSlice['All'], ['N. meningitidis']] = lab_continent_breakdown.loc[pd.IndexSlice['All'], ['N. meningitidis']] + 1
+lab_continent_breakdown.drop(columns=['All'], inplace=True)
+
 lab_continent_breakdown
 
 
@@ -670,7 +674,7 @@ for species in iris_oxcgrt_bar_copy['species'].unique():
     plt.show()
 
 
-# ## Figure 3. Assessment of the movement of people in IRIS countries using Google COVID-19 Community Mobility Reports data
+# ## Supplementary Figure 5. Assessment of the movement of people in IRIS countries using Google COVID-19 Community Mobility Reports data
 # 
 # We visualised country-level changes in human behaviour between 15/02/2020 and 31/05/2020 based Google's COVID-19 Community Mobility Reports.  Note that Google COVID-19 Community Mobility Reports data starts 15/02/2020 (see https://www.google.com/covid19/mobility/).  We focused on two place categories: residential and workplaces.  
 # 
@@ -750,7 +754,7 @@ google_iris.to_csv(datasets/'publication_dataset_google.csv')
 google_iris.drop(columns=['week'], inplace=True)
 
 
-# ### Generated Figure 3.
+# ### Generated Supplementary Figure 5
 # 
 # We visualised per country changes in movement in the residential and workplaces categories. We plotted daily data as line graphs and added annotation to indicate the WHO declaration of the COVID-19 pandemic (11/03/2020, ISO week 11).
 # 
@@ -770,7 +774,7 @@ google_iris_long = pd.melt(google_iris, id_vars=['country_region', 'date'], valu
 google_res_work = google_iris_long.loc[(google_iris_long['Metric'] == 'Residential') | (google_iris_long['Metric'] == 'Workplaces')]
 
 # Save to file
-google_res_work.to_csv(figurethree/'figure_3_data.csv')
+google_res_work.to_csv(figurethree/'figure_S5_data.csv')
 
 google_res_work.head(2)
 
@@ -822,7 +826,8 @@ for ax in g.axes.flat:
     ax.axvline(x='2020-03-09', color='black', linestyle='--')
 
 # Save as PNG and SVG
-plt.savefig(figurethree/"figure_3.png", bbox_inches="tight")
-plt.savefig(figurethree/"figure_3.svg", bbox_inches="tight")
+plt.savefig(figurethree/"figure_S5.png", bbox_inches="tight")
+plt.savefig(figurethree/"figure_S5.svg", bbox_inches="tight")
 
 plt.show()
+
