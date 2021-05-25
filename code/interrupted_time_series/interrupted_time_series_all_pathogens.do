@@ -1,21 +1,21 @@
 
 ** STATS code for analyses
-**In STATA "*" preceding a line indicates that the line is ignored  and similarly any lines between the symbols /* & */
+**In STATA "*" preceding a line indicates that the line is ignored and similarly any lines between the symbols /* & */
 
 ***JOINT ANALYSIS FOR 4 pathogens
 ****Note missing data 
 *** H. influenzae Canada Spain
 *** N. meningitidis Canada China Iceland Israel South Korea Switzerland
 *** S. agalactiae Belgium Brazil  Canada  China  Czech Republic France Hong Kong Luxembourg New Zealand Northern Ireland Scotland South Africa South Korea Spain Sweden Switzerland Wales
-* Analyses exclude countries with missing data for any of S. pneumoniae, H. Influenzae, N. Meningitidis allowing comparibility across these three pathogens
+* Analyses exclude countries with missing data for any of S. pneumoniae, H. Influenzae, N. Meningitidis allowing comparability across these three pathogens
 * Countries missing S. agalactiae are included
 ************generating datasets by species
 clear
 **code to identify location of files (edit to fit local folder and file naming)
-cd H:\Coronavirus\Pneumococcal\data
+cd Z:\H-Drive\Coronavirus\Pneumococcal\data\danish
  
  
-**generating local macros for data handling to cycle through eah pathogen in turn
+**generating local macros for data handling to cycle through each pathogen in turn
 local z = 0
 local b p i m a
 foreach m of local b {
@@ -38,10 +38,10 @@ local z = 0
 local bact pneumoniae influenzae meningitidis agalactiae 
 foreach m of local bact {
 **data used as per insheet command below is a comma separated file with one record per patient sample and variables for year, week of year (ISO week), country and pathogen
-insheet using iris3.csv, clear
+insheet using iris6.csv, clear
 * dropping variables not used in these analyses
-drop  id aliases isolate date_sampled date_received non_cult year_sam year
-* drestricting to countries not missing any of the three main pathogens
+capture drop  id aliases isolate date_sampled date_received non_cult year_sam year
+* restricting to countries not missing any of the three main pathogens
 drop if country == "Canada"  | country == "China"  | country == "Iceland"  | country == "Israel"  | country == "South Korea"  | country == "Spain"  | country == "Switzerland" 
 
 local z = `z' + 1
@@ -133,6 +133,8 @@ replace gdummy  = 0
 replace gdummy  = 1  if nweek >= `i' +12
 replace gslope = 0
 replace gslope = (nweek- (`i'+12 ))*gdummy 
+menbreg `b`z''count  nweek s1 c1 s2 c2 , irr
+estimates store Y
 menbreg `b`z''count  nweek gslope gdummy  s1 c1 s2 c2 , irr
 **saving results from full model for graphing
 predict pred1`b`z''_`i' 
