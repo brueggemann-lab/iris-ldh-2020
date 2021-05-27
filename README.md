@@ -2,7 +2,7 @@
 
 Investigation of changes in rates of invasive bacterial disease during the early phase of the COVID-19 pandemic.
 
-[Brueggemann AB, Jansen van Rensburg MJ, Shaw D, McCarthy N, Jolley KA, Maiden MCJ et al. The Invasive Respiratory Infection Surveillance (IRIS) Initiative reveals significant reductions in invasive bacterial infections during the COVID-19 pandemic. medRxiv 2020.11.18.20225029](https://www.medrxiv.org/content/10.1101/2020.11.18.20225029v1)
+[Brueggemann AB, Jansen van Rensburg MJ, Shaw D, McCarthy N, Jolley KA, Maiden MCJ, van der Linden MPG et al. "Changes in the incidence of invasive disease due to *Streptococcus pneumoniae*, *Haemophilus influenzae*, and *Neisseria meningitidis* during the COVID-19 pandemic in 26 countries and territories in the Invasive Respiratory Infection Surveillance Initiative: a prospective analysis of surveillance data." The Lancet Digital Health 3, no. 6 (2021): e360-e370.](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(21)00077-7/fulltext)
 
 
 ## Guide to raw data files
